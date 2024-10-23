@@ -19,11 +19,12 @@ const SineOscillator = () => {
       const newSamplingPoints = [];
       const newBits = [];
       
-      brownianPhase.current += (Math.random() - 0.5) * diffusionRate;
+      brownianPhase.current = 0;
       
       for (let i = 0; i < points; i++) {
         const t = (i / points) * maxTime;
         const localNoise = (Math.random() - 0.5) * 0.1 * diffusionRate;
+        brownianPhase.current += (Math.random() - 0.5) * diffusionRate;
         const yPerturbed = Math.sin(2 * Math.PI * frequency * t + brownianPhase.current + localNoise);
         const yReference = Math.sin(2 * Math.PI * frequency * t);
         
