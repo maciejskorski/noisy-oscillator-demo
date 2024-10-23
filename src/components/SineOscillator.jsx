@@ -136,7 +136,7 @@ const SineOscillator = () => {
             <input
               type="range"
               min={0}
-              max={1}
+              max={2.0}  {/* Increased from 1.0 to 2.0 */}
               step={0.01}
               value={diffusionRate}
               onChange={(e) => setDiffusionRate(Number(e.target.value))}
